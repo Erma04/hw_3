@@ -15,7 +15,7 @@ public class Main {
             } catch (LimitException e) {
                 System.out.println("У вас на счете осталось " + e.getRemainingAmount() + " сом." + "Хотите снять?");
                 try {
-                    bankAccount.withDraw(3000);
+                    bankAccount.withDraw((int) e.getRemainingAmount());
                 } catch (LimitException ex) {
                     System.out.println(ex.getMessage());
                 }
